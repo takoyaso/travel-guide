@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>バンコク観光完全ガイド【2024年版】コスパ最高のホテル・グルメ・観光地 | トロピカルルーツ</title>
+  <meta name="description" content="バンコク旅行の完全ガイド。コスパ最高のホテル3選、外せない観光地、絶品グルメスポットを現地情報をもとに厳選紹介。Trip.comで最安値予約も可能。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2D6A4F;
+      --green-light: #52B788;
+      --gold: #D4A017;
+      --cream: #FAFAF5;
+      --dark: #1A1A2E;
+      --gray: #6B7280;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.9;
+    }
+
+    nav {
+      background: var(--green);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.3rem;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--white);
+      font-size: 0.7rem;
+      display: block;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+
+    .nav-back {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+    }
+
+    /* 記事ヘッダー */
+    .article-hero {
+      background: linear-gradient(135deg, #1B4332 0%, var(--green) 100%);
+      color: var(--white);
+      padding: 60px 24px 48px;
+      text-align: center;
+    }
+
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+    }
+
+    .breadcrumb a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    .article-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 5vw, 2.6rem);
+      line-height: 1.4;
+      margin-bottom: 16px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .article-meta {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* 記事本文 */
+    .article-container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    /* 目次 */
+    .toc {
+      background: var(--white);
+      border-left: 4px solid var(--green);
+      padding: 24px 28px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 40px;
+    }
+
+    .toc h2 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--green);
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      padding-left: 20px;
+    }
+
+    .toc li {
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .toc a {
+      color: var(--dark);
+      text-decoration: none;
+    }
+
+    .toc a:hover { color: var(--green); }
+
+    /* 見出し */
+    .article-container h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--green);
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--green-light);
+    }
+
+    .article-container h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin: 28px 0 10px;
+    }
+
+    .article-container p {
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      color: #374151;
+    }
+
+    /* ホテルカード */
+    .hotel-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 24px;
+      margin: 20px 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      border-left: 4px solid var(--gold);
+    }
+
+    .hotel-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--dark);
+      margin-bottom: 6px;
+    }
+
+    .hotel-price {
+      font-size: 0.85rem;
+      color: var(--green);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .hotel-card p {
+      font-size: 0.88rem;
+      color: var(--gray);
+      margin-bottom: 14px;
+    }
+
+    .hotel-btn {
+      display: inline-block;
+      background: var(--green);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 10px 20px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .hotel-btn:hover { opacity: 0.85; }
+
+    /* ヒントボックス */
+    .tip-box {
+      background: #E8F5E9;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 0.9rem;
+    }
+
+    .tip-box strong {
+      color: var(--green);
+    }
+
+    /* アフィリエイトバナー */
+    .affiliate-banner {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+      color: var(--white);
+      padding: 32px 28px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .affiliate-banner h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+
+    .affiliate-banner p {
+      opacity: 0.85;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    .affiliate-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green);
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .affiliate-btn:hover { opacity: 0.9; }
+
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.82rem;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .article-hero { padding: 40px 16px 32px; }
+      .article-container { padding: 32px 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">
+    Tropical Roots
+    <span>東南アジア旅行ガイド</span>
+  </a>
+  <a href="/" class="nav-back">← 旅行先一覧</a>
+</nav>
+
+<div class="article-hero">
+  <p class="breadcrumb"><a href="/">ホーム</a> &rsaquo; <a href="#">タイ</a> &rsaquo; バンコク</p>
+  <h1>バンコク観光完全ガイド【2024年版】<br>コスパ最高のホテル・グルメ・観光地</h1>
+  <p class="article-meta">2024年更新 ｜ 読了時間：約7分</p>
+</div>
+
+<div class="article-container">
+
+  <!-- 目次 -->
+  <div class="toc">
+    <h2>📋 目次</h2>
+    <ol>
+      <li><a href="#intro">バンコクの基本情報</a></li>
+      <li><a href="#hotels">コスパ最高のホテル3選</a></li>
+      <li><a href="#sights">外せない観光スポット</a></li>
+      <li><a href="#food">絶品グルメスポット</a></li>
+      <li><a href="#tips">旅行の注意点・Tips</a></li>
+      <li><a href="#book">ホテル予約はここで</a></li>
+    </ol>
+  </div>
+
+  <!-- イントロ -->
+  <h2 id="intro">🌆 バンコクの基本情報</h2>
+  <p>タイの首都バンコク（正式名称クルンテープ）は、東南アジア最大の国際都市のひとつです。豪華な寺院、活気あふれる屋台、世界水準のショッピングモールが共存するこの街は、毎年2,000万人以上の旅行者が訪れる人気ナンバーワンの旅行地です。</p>
+  <p>日本からの直行便で約6〜7時間。時差は-2時間とアクセスも抜群。初めての東南アジア旅行にも最適です。</p>
+
+  <div class="tip-box">
+    <strong>💡 バンコク旅行の基本データ</strong><br>
+    通貨：タイバーツ（THB）/ 1バーツ≒4円<br>
+    言語：タイ語（英語もある程度通じる）<br>
+    ベストシーズン：11月〜2月（乾季・涼しい）<br>
+    移動：BTS・MRT（地下鉄）が便利
+  </div>
+
+  <!-- ホテル -->
+  <h2 id="hotels">🏨 コスパ最高のホテル3選</h2>
+  <p>バンコクは「価格の割に質が高いホテル」の宝庫です。BTSやMRT沿線のホテルを選ぶと移動がグッと楽になります。</p>
+
+  <div class="hotel-card">
+    <h3>① アマリ バンコク</h3>
+    <p class="hotel-price">目安：8,000〜15,000円/泊 ⭐⭐⭐⭐</p>
+    <p>スクンビット地区の中心部に位置し、BTSアソーク駅から徒歩1分。屋外プール、フィットネスセンター完備。観光にもビジネスにも便利なロケーション。</p>
+    <a href="https://trip.tpk.mx/zkk9ls9E" target="_blank" rel="noopener" class="hotel-btn">Trip.comで最安値を確認 →</a>
+  </div>
+
+  <div class="hotel-card">
+    <h3>② センタラ グランド アット セントラルワールド</h3>
+    <p class="hotel-price">目安：12,000〜20,000円/泊 ⭐⭐⭐⭐⭐</p>
+    <p>バンコク最大のショッピングモール「セントラルワールド」直結。ルーフトップバーからの夜景は必見。観光・ショッピングの拠点として最高。</p>
+    <a href="https://trip.tpk.mx/zkk9ls9E" target="_blank" rel="noopener" class="hotel-btn">Trip.comで最安値を確認 →</a>
+  </div>
+
+  <div class="hotel-card">
+    <h3>③ イビス バンコク サイアム</h3>
+    <p class="hotel-price">目安：4,000〜8,000円/泊 ⭐⭐⭐</p>
+    <p>コスパ重視ならイビスが断然おすすめ。清潔感があり、サービスも丁寧。サイアム駅直結で観光の中心地へのアクセス抜群。</p>
+    <a href="https://trip.tpk.mx/zkk9ls9E" target="_blank" rel="noopener" class="hotel-btn">Trip.comで最安値を確認 →</a>
+  </div>
+
+  <!-- 観光地 -->
+  <h2 id="sights">🏛️ 外せない観光スポット</h2>
+
+  <h3>① ワット・プラケオ（王宮・エメラルド寺院）</h3>
+  <p>バンコク観光の定番中の定番。タイ王室の聖域で、精緻な装飾と黄金の仏塔が圧倒的な美しさです。入場には肩・膝を覆う服装が必要（入口でレンタル可）。</p>
+
+  <h3>② ワット・アルン（暁の寺）</h3>
+  <p>チャオプラヤー川沿いに立つ美しい仏塔。夕暮れ時に対岸から眺める景色が絶景。ボートで川を渡ってアクセスする体験もおすすめです。</p>
+
+  <h3>③ カオサン通り</h3>
+  <p>世界中のバックパッカーが集まる有名ストリート。屋台グルメ・土産物・マッサージ店が並び、バンコクのカオスを体感できます。夜の賑わいは特に圧巻。</p>
+
+  <h3>④ チャトゥチャック・ウィークエンドマーケット</h3>
+  <p>毎週土日開催の巨大マーケット。8,000以上の店舗が集まり、洋服・雑貨・アンティークなど何でも揃います。午前中の早い時間帯が涼しくておすすめ。</p>
+
+  <!-- グルメ -->
+  <h2 id="food">🍜 絶品グルメスポット</h2>
+
+  <h3>① ガパオライス（60〜100バーツ）</h3>
+  <p>バジル炒めご飯は屋台の定番メニュー。目玉焼きをトッピングして食べるのがタイ流。どこで食べてもハズレなしの国民食です。</p>
+
+  <h3>② トムヤムクン（100〜200バーツ）</h3>
+  <p>酸っぱ辛いスープはタイ料理の代名詞。海老入りが定番ですが、チキンやシーフード版もあります。</p>
+
+  <h3>③ マンゴースティッキーライス（60〜100バーツ）</h3>
+  <p>甘いもち米と完熟マンゴーの組み合わせは、一度食べたら忘れられない絶品デザート。</p>
+
+  <!-- Tips -->
+  <h2 id="tips">⚠️ 旅行の注意点・Tips</h2>
+
+  <div class="tip-box">
+    <strong>✅ バンコク旅行Tips</strong><br>
+    • タクシーは必ずメーター使用を確認する<br>
+    • 寺院訪問時は肌を露出しない服装で<br>
+    • 王室の批判は厳禁（不敬罪あり）<br>
+    • 水道水は飲まない（ペットボトル推奨）<br>
+    • スリに注意（特に観光地・BTS内）
+  </div>
+
+  <!-- 予約バナー -->
+  <div class="affiliate-banner" id="book">
+    <h3>✈️ バンコクのホテル・航空券を予約する</h3>
+    <p>Trip.comなら最安値保証。日本語サポートも充実しています。</p>
+    <a href="https://trip.tpk.mx/zkk9ls9E" target="_blank" rel="noopener" class="affiliate-btn">
+      Trip.comでバンコクを検索 →
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2024 Tropical Roots | 東南アジア旅行ガイド</p>
+  <p style="margin-top:8px;">
+    ※本サイトはアフィリエイトプログラムに参加しています。
+    <a href="https://trip.tpk.mx/zkk9ls9E" target="_blank">Trip.com</a> のリンクから予約いただくと、サイト運営の支援になります。
+  </p>
+</footer>
+
+</body>
+</html>

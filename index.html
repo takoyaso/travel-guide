@@ -1,16 +1,340 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>旅行ガイド</title>
-    <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
-        h1 { color: #0066cc; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トロピカルルーツ | 東南アジア旅行ガイド</title>
+  <meta name="description" content="東南アジアの旅をもっとスマートに。タイ・ベトナム・フィリピン・インドネシア・カンボジアのコスパ最高な旅行情報を厳選してお届けします。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2D6A4F;
+      --green-light: #52B788;
+      --gold: #D4A017;
+      --cream: #FAFAF5;
+      --dark: #1A1A2E;
+      --gray: #6B7280;
+      --white: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      line-height: 1.8;
+    }
+
+    /* ナビゲーション */
+    nav {
+      background: var(--green);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+      font-size: 1.4rem;
+      text-decoration: none;
+    }
+
+    .logo span {
+      color: var(--white);
+      font-size: 0.75rem;
+      display: block;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+
+    /* ヒーローセクション */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #1B4332 60%, #0D2B1D 100%);
+      color: var(--white);
+      padding: 80px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '🌿';
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.05;
+      top: -20px;
+      right: -20px;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.8);
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+
+    .hero-cta:hover { opacity: 0.85; }
+
+    /* 国別セクション */
+    .section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--green-light);
+      margin-bottom: 8px;
+    }
+
+    .section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: var(--dark);
+      margin-bottom: 40px;
+    }
+
+    /* 国カード */
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .country-card {
+      background: var(--white);
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .country-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    }
+
+    .card-emoji {
+      background: var(--green);
+      padding: 32px;
+      text-align: center;
+      font-size: 3rem;
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-body h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--dark);
+    }
+
+    .card-body p {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    .card-tag {
+      display: inline-block;
+      background: #E8F5E9;
+      color: var(--green);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+
+    /* Trip.comリンクバナー */
+    .affiliate-banner {
+      background: linear-gradient(135deg, var(--green) 0%, var(--green-light) 100%);
+      color: var(--white);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .affiliate-banner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+    }
+
+    .affiliate-banner p {
+      opacity: 0.85;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+    }
+
+    .affiliate-btn {
+      display: inline-block;
+      background: var(--white);
+      color: var(--green);
+      font-weight: 700;
+      padding: 14px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: opacity 0.2s;
+    }
+
+    .affiliate-btn:hover { opacity: 0.9; }
+
+    /* フッター */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.6);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 60px 20px; }
+      .country-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <h1>🌍 旅行ガイドへようこそ</h1>
-    <p>世界中の旅行情報をお届けします。</p>
+
+<nav>
+  <a href="/" class="logo">
+    Tropical Roots
+    <span>東南アジア旅行ガイド</span>
+  </a>
+</nav>
+
+<section class="hero">
+  <div class="hero-tag">SOUTHEAST ASIA TRAVEL GUIDE</div>
+  <h1>賢く旅する、<span>東南アジア</span>の楽しみ方</h1>
+  <p>コスパ最高のホテル・観光地・グルメ情報を厳選。あなたの旅をもっとスマートに。</p>
+  <a href="#destinations" class="hero-cta">旅行先を見る →</a>
+</section>
+
+<section class="section" id="destinations">
+  <p class="section-label">DESTINATIONS</p>
+  <h2>人気の旅行先から選ぶ</h2>
+  <div class="country-grid">
+
+    <a href="destinations/thailand.html" class="country-card">
+      <div class="card-emoji">🇹🇭</div>
+      <div class="card-body">
+        <h3>タイ</h3>
+        <p>バンコク・チェンマイ・プーケット。寺院・グルメ・リゾートが揃う人気No.1の旅行地。</p>
+        <span class="card-tag">3記事</span>
+      </div>
+    </a>
+
+    <a href="destinations/vietnam.html" class="country-card">
+      <div class="card-emoji">🇻🇳</div>
+      <div class="card-body">
+        <h3>ベトナム</h3>
+        <p>ハノイ・ホーチミン・ダナン。フォーやバインミーが絶品。歴史と食が魅力の国。</p>
+        <span class="card-tag">3記事</span>
+      </div>
+    </a>
+
+    <a href="destinations/philippines.html" class="country-card">
+      <div class="card-emoji">🇵🇭</div>
+      <div class="card-body">
+        <h3>フィリピン</h3>
+        <p>セブ島・ボラカイ・マニラ。透明度抜群のビーチとアイランドホッピングが人気。</p>
+        <span class="card-tag">3記事</span>
+      </div>
+    </a>
+
+    <a href="destinations/indonesia.html" class="country-card">
+      <div class="card-emoji">🇮🇩</div>
+      <div class="card-body">
+        <h3>インドネシア</h3>
+        <p>バリ島・ジャカルタ。神秘的な文化とリゾートが共存する17,000の島々の国。</p>
+        <span class="card-tag">2記事</span>
+      </div>
+    </a>
+
+    <a href="destinations/cambodia.html" class="country-card">
+      <div class="card-emoji">🇰🇭</div>
+      <div class="card-body">
+        <h3>カンボジア</h3>
+        <p>アンコールワット・プノンペン。世界遺産と歴史が深く、旅人を魅了し続ける国。</p>
+        <span class="card-tag">2記事</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<div class="affiliate-banner">
+  <h2>✈️ ホテル・航空券をお探しですか？</h2>
+  <p>Trip.comで東南アジアの最安値ホテル・航空券を比較・予約できます。</p>
+  <a href="https://trip.tpk.mx/zkk9ls9E" target="_blank" rel="noopener" class="affiliate-btn">
+    Trip.comで検索する →
+  </a>
+</div>
+
+<footer>
+  <p>© 2024 Tropical Roots | 東南アジア旅行ガイド</p>
+  <p style="margin-top:8px;">
+    ※本サイトはアフィリエイトプログラムに参加しています。
+    <a href="https://trip.tpk.mx/zkk9ls9E" target="_blank">Trip.com</a>
+  </p>
+</footer>
+
 </body>
 </html>
